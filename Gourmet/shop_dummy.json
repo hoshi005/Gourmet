@@ -1,0 +1,96 @@
+{
+  "name_kana": "かまくらやさいとちーずふぉんでゅきんしちょうがーでんふぁーむきんしちょうえきまえてん",
+  "other_memo": "人気のバースデーサプライズプランもご用意しております♪【照明・音響設備あり！】",
+  "photo": {
+    "pc": {
+      "l": "https://imgfp.hotp.jp/IMGH/69/67/P032166967/P032166967_238.jpg",
+      "m": "https://imgfp.hotp.jp/IMGH/69/67/P032166967/P032166967_168.jpg",
+      "s": "https://imgfp.hotp.jp/IMGH/69/67/P032166967/P032166967_58_s.jpg"
+    },
+    "mobile": {
+      "l": "https://imgfp.hotp.jp/IMGH/69/67/P032166967/P032166967_168.jpg",
+      "s": "https://imgfp.hotp.jp/IMGH/69/67/P032166967/P032166967_100.jpg"
+    }
+  },
+  "large_area": {
+    "name": "東京",
+    "code": "Z011"
+  },
+  "party_capacity": "120",
+  "large_service_area": {
+    "name": "関東",
+    "code": "SS10"
+  },
+  "address": "東京都墨田区江東橋３－１３－６　　KINSIAビル７F",
+  "mobile_access": "総武線錦糸町駅南口徒歩1分/半蔵門線錦糸町駅徒歩1分",
+  "id": "J001018789",
+  "lng": "139.8136613300",
+  "course": "あり",
+  "show": "なし",
+  "parking": "なし",
+  "non_smoking": "一部禁煙 ：個室・半個室で分煙しております。",
+  "horigotatsu": "あり ：お席の事ならお気軽に店舗までご相談ください。女子会/合コン/個室で宴会/パーティー/誕生日/デートに最適!",
+  "name": "錦糸町ガーデンファーム 錦糸町駅前店",
+  "genre": {
+    "name": "居酒屋",
+    "catch": "『Wフォンデュ食べ放題』⇒980円♪",
+    "code": "G001"
+  },
+  "open": "月～木、祝前日: 11:30～15:30 （料理L.O. 15:00 ドリンクL.O. 15:00）17:00～翌0:00 （料理L.O. 23:00 ドリンクL.O. 23:30）金: 11:30～15:30 （料理L.O. 15:00 ドリンクL.O. 15:30）17:00～翌0:00 （料理L.O. 23:00 ドリンクL.O. 23:30）土、日、祝日: 11:30～翌0:00 （料理L.O. 23:00 ドリンクL.O. 23:30）",
+  "tatami": "なし",
+  "card": "利用可",
+  "charter": "貸切可 ：お店まるごと貸切OK♪お気軽にご相談下さい！",
+  "wifi": "あり",
+  "sub_genre": {
+    "name": "イタリアン・フレンチ",
+    "code": "G006"
+  },
+  "shop_detail_memo": "サプライズに♪誕生日＆記念日ケーキもご用意致します♪※クーポン利用で無料プレゼント！",
+  "band": "不可",
+  "middle_area": {
+    "name": "錦糸町・浅草橋・両国・亀戸",
+    "code": "Y017"
+  },
+  "lat": "35.6960848597",
+  "karaoke": "なし",
+  "logo_image": "https://imgfp.hotp.jp/IMGH/09/61/P023560961/P023560961_69.jpg",
+  "midnight": "営業している",
+  "budget": {
+    "average": "3000円～",
+    "name": "2001～3000円",
+    "code": "B002"
+  },
+  "urls": {
+    "pc": "https://www.hotpepper.jp/strJ001018789/?vos=nhppalsa000016"
+  },
+  "lunch": "あり",
+  "english": "あり",
+  "close": "無",
+  "service_area": {
+    "name": "東京",
+    "code": "SA11"
+  },
+  "budget_memo": "お通し:400円(税抜）/チャージ料:なし",
+  "tv": "なし",
+  "private_room": "あり ：個室は2名様～OK！女子会/飲み会/合コン/夜カフェ/パーティーに！完全個室もご用意♪",
+  "coupon_urls": {
+    "sp": "https://www.hotpepper.jp/strJ001018789/scoupon/?vos=nhppalsa000016",
+    "pc": "https://www.hotpepper.jp/strJ001018789/map/?vos=nhppalsa000016"
+  },
+  "small_area": {
+    "name": "錦糸町",
+    "code": "X193"
+  },
+  "barrier_free": "なし",
+  "wedding": "ウエディング2次会・婚活Party・各種Party等、お気軽にお問い合わせ下さい♪",
+  "access": "JR錦糸町駅南口 徒歩1分・半蔵門線錦糸町駅1分/◎JR錦糸町駅南口（マルイ側）出て右、目の前の細長いビルです",
+  "child": "お子様連れ歓迎 ：お子様連れのママ会にも人気です♪",
+  "capacity": "120",
+  "pet": "不可",
+  "free_food": "あり ：チーズフォンデュ＆ミートフォンデュの『Wフォンデュ食べ放題』⇒980円！",
+  "ktai_coupon": "0",
+  "station_name": "錦糸町",
+  "catch": "★ハロウィン限定★ ★サプライズ特典★",
+  "free_drink": "あり ：コースじゃなくても飲み放題OK！お得なクーポンで【2時間980円～】100種を超える豪華ラインナップ♪"
+}
+
