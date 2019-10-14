@@ -33,13 +33,18 @@ struct TopView: View {
                             self.selectedShop = shop
                             self.showModal.toggle()
                     }
-                    .sheet(isPresented: self.$showModal) {
-                        Text(self.selectedShop?.name ?? "")
+                    .sheet(isPresented: self.$showModal, onDismiss: {
+                        print("@@@ dismiss modal view !")
+                    }) {
+                        if self.selectedShop != nil {
+                            DetailView(shop: self.selectedShop!)
+                        }
                     }
                 }
             }
             .navigationBarTitle(Text("ちかくのお店"))
             .navigationBarItems(trailing: updateButton)
+            .onAppear { self.viewModel.fetchHotpepper() }
         }
     }
 }
