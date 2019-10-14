@@ -16,7 +16,7 @@ struct ShopRowView: View {
         VStack(alignment: .leading) {
             TagView(shop: shop)
             Text(shop.name)
-                .font(.body)
+                .font(.headline)
             Text(shop.address)
                 .font(.footnote)
                 .foregroundColor(.gray)
