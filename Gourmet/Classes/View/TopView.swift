@@ -12,6 +12,9 @@ struct TopView: View {
     
     @ObservedObject(initialValue: TopViewModel()) var viewModel
     
+    @State var showModal: Bool = false
+    @State var selectedShop: Shop?
+    
     private var updateButton: some View {
         Button(action: {
             self.viewModel.fetchHotpepper()
@@ -26,6 +29,13 @@ struct TopView: View {
             List {
                 ForEach(viewModel.shops) { shop in
                     ShopRowView(shop: shop)
+                        .onTapGesture {
+                            self.selectedShop = shop
+                            self.showModal.toggle()
+                    }
+                    .sheet(isPresented: self.$showModal) {
+                        Text(self.selectedShop?.name ?? "")
+                    }
                 }
             }
             .navigationBarTitle(Text("ちかくのお店"))

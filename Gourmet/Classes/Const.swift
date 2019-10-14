@@ -11,6 +11,6 @@ import Foundation
 struct Const {
     
     struct API {
-        static let key = "c2bbfd56c0a2af70"
+        static let key = "[YOUR_API_KEY]"
     }
 }
