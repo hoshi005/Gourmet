@@ -88,6 +88,7 @@ private extension HotpepperFetcher {
         
         components.queryItems = [
             URLQueryItem(name: "key", value: Const.API.key),
+            URLQueryItem(name: "count", value: "20"),
             URLQueryItem(name: "range", value: "5"),
             URLQueryItem(name: "order", value: "4"),
             URLQueryItem(name: "format", value: "json"),
