@@ -10,7 +10,9 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @Environment(\.presentationMode) var presentationMode
+//    /// プレゼント状態を管理するシステム変数.
+//    @Environment(\.presentationMode) var presentationMode
+    
     @ObservedObject var viewModel: DetailViewModel
     
     var body: some View {
@@ -44,18 +46,19 @@ struct DetailView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .navigationBarTitle(Text(viewModel.shop.name), displayMode: .inline)
-            .navigationBarItems(trailing: self.dismissButton)
+//            .navigationBarItems(trailing: self.dismissButton)
         }
         .onAppear() {
             self.viewModel.loadImage()
         }
     }
     
-    private var dismissButton: some View {
-        Button("閉じる") {
-            self.presentationMode.wrappedValue.dismiss()
-        }
-    }
+//    /// モーダルを閉じるボタン.
+//    private var dismissButton: some View {
+//        Button("閉じる") {
+//            self.presentationMode.wrappedValue.dismiss()
+//        }
+//    }
     
     init(shop: Shop) {
         self.viewModel = DetailViewModel(shop: shop)
