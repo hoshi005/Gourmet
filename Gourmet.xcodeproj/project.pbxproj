@@ -20,9 +20,9 @@
 		EF52965623520C5F009C9F7A /* HotpepperFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52965523520C5F009C9F7A /* HotpepperFetcher.swift */; };
 		EF5296582352B72E009C9F7A /* ShopRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5296572352B72E009C9F7A /* ShopRowView.swift */; };
 		EF52965A2352B80F009C9F7A /* shop_dummy.json in Resources */ = {isa = PBXBuildFile; fileRef = EF5296592352B80F009C9F7A /* shop_dummy.json */; };
-		EF52965C2352BE73009C9F7A /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52965B2352BE73009C9F7A /* TagView.swift */; };
 		EF52965E2352C7FE009C9F7A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EF52965D2352C7FE009C9F7A /* README.md */; };
 		EF5296602352C824009C9F7A /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52965F2352C824009C9F7A /* Const.swift */; };
+		EFEFFACF23541904009EAEA7 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEFFACE23541904009EAEA7 /* TagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,9 +41,9 @@
 		EF52965523520C5F009C9F7A /* HotpepperFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotpepperFetcher.swift; sourceTree = "<group>"; };
 		EF5296572352B72E009C9F7A /* ShopRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopRowView.swift; sourceTree = "<group>"; };
 		EF5296592352B80F009C9F7A /* shop_dummy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shop_dummy.json; sourceTree = "<group>"; };
-		EF52965B2352BE73009C9F7A /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		EF52965D2352C7FE009C9F7A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EF52965F2352C824009C9F7A /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		EFEFFACE23541904009EAEA7 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 			children = (
 				EF52964D23520AFB009C9F7A /* TopView.swift */,
 				EF5296572352B72E009C9F7A /* ShopRowView.swift */,
-				EF52965B2352BE73009C9F7A /* TagView.swift */,
+				EFEFFACD23541904009EAEA7 /* Util */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +159,14 @@
 				EF52965123520BB2009C9F7A /* HotpepperFetchable.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		EFEFFACD23541904009EAEA7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EFEFFACE23541904009EAEA7 /* TagView.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +243,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF52964B23520ACA009C9F7A /* AppDelegate.swift in Sources */,
-				EF52965C2352BE73009C9F7A /* TagView.swift in Sources */,
 				EF52965623520C5F009C9F7A /* HotpepperFetcher.swift in Sources */,
+				EFEFFACF23541904009EAEA7 /* TagView.swift in Sources */,
 				EF52964E23520AFB009C9F7A /* TopView.swift in Sources */,
 				EF52965023520B16009C9F7A /* TopViewModel.swift in Sources */,
 				EF52964923520ACA009C9F7A /* Response.swift in Sources */,
