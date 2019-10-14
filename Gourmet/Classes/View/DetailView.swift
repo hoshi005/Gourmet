@@ -27,7 +27,7 @@ struct DetailView: View {
                         .foregroundColor(.gray)
                     
                     VStack {
-                        Image("noimage")
+                        viewModel.image
                             .cornerRadius(8)
                     }
                     .frame(maxWidth: .infinity)
@@ -45,6 +45,9 @@ struct DetailView: View {
             }
             .navigationBarTitle(Text(viewModel.shop.name), displayMode: .inline)
             .navigationBarItems(trailing: self.dismissButton)
+        }
+        .onAppear() {
+            self.viewModel.loadImage()
         }
     }
     
