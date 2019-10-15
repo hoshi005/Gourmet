@@ -17,7 +17,8 @@ struct TopView: View {
     
     private var updateButton: some View {
         Button(action: {
-            self.viewModel.fetchHotpepper()
+//            self.viewModel.fetchHotpepper()
+            self.viewModel.updateLocation()
         }) {
             Image(systemName: "arrow.counterclockwise")
                 .imageScale(.large)
@@ -44,7 +45,8 @@ struct TopView: View {
             }
             .navigationBarTitle(Text("ちかくのお店"))
             .navigationBarItems(trailing: updateButton)
-            .onAppear { self.viewModel.fetchHotpepper() }
+//            .onAppear { self.viewModel.fetchHotpepper() }
+            .onAppear { self.viewModel.updateLocation() }
         }
     }
 }
