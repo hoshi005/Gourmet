@@ -16,6 +16,7 @@ final class TopViewModel: NSObject, ObservableObject {
     
     var locationManager = CLLocationManager()
     var location: CLLocation = CLLocation()
+    var shops: [Shop] = []
     
     private let fetcher: HotpepperFetcher
     private var requestCancellable: Cancellable? {
@@ -24,20 +25,18 @@ final class TopViewModel: NSObject, ObservableObject {
     
     init(fetcher: HotpepperFetcher = HotpepperFetcher()) {
         self.fetcher = fetcher
+        super.init()
+        self.locationManager.delegate = self
     }
     
     deinit {
         requestCancellable?.cancel()
     }
     
-    var shops: [Shop] {
-        response?.results.shop ?? []
-    }
-    
     
     /// 現在地の更新.
     func updateLocation() {
-        self.locationManager.delegate = self
+        print(#function)
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             self.locationManager.startUpdatingLocation()
@@ -66,6 +65,7 @@ final class TopViewModel: NSObject, ObservableObject {
             }, receiveValue: { [weak self] response in
                 guard let self = self else { return }
                 self.response = response
+                self.shops = response.results.shop
             })
     }
 }
@@ -75,6 +75,10 @@ final class TopViewModel: NSObject, ObservableObject {
 
 extension TopViewModel: CLLocationManagerDelegate {
     
+    /// 位置情報が更新されるたびに呼び出される.
+    /// - Parameters:
+    ///   - manager: CLLocationManager
+    ///   - locations: 取得した位置情報.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print(#function)
         manager.stopUpdatingLocation()
@@ -90,12 +94,10 @@ extension TopViewModel: CLLocationManagerDelegate {
         switch status {
         case .notDetermined:
             print("ユーザーはこのアプリケーションに関してまだ選択を行っていません")
-            // アプリケーションに関してまだ選択されていない
             manager.requestWhenInUseAuthorization() // 起動中のみの取得許可を求める
             break
         case .restricted:
             print("このアプリケーションは位置情報サービスを使用できません(ユーザによって拒否されたわけではありません)")
-            // 「このアプリは、位置情報を取得できないために、正常に動作できません」を表示する
             break
         case .denied:
             print("ローケーションサービスの設定が「無効」になっています (ユーザーによって、明示的に拒否されています）")

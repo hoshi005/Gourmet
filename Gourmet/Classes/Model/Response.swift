@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreLocation
 
 struct HotPepperResponse: Codable {
     let results: Result
@@ -145,6 +145,13 @@ struct Shop: Codable, Identifiable {
         case midnight
         case shopDetailMemo = "shop_detail_memo"
         case couponUrls = "coupon_urls"
+    }
+    
+    var coordinate: CLLocationCoordinate2D {
+        guard
+            let lat = CLLocationDegrees(lat),
+            let lng = CLLocationDegrees(lng) else { fatalError() }
+        return CLLocationCoordinate2D(latitude: lat, longitude: lng)
     }
     
     /// preview用のダミーデータ.

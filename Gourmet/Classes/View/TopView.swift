@@ -17,7 +17,6 @@ struct TopView: View {
     
     private var updateButton: some View {
         Button(action: {
-//            self.viewModel.fetchHotpepper()
             self.viewModel.updateLocation()
         }) {
             Image(systemName: "arrow.counterclockwise")
@@ -27,25 +26,29 @@ struct TopView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.shops) { shop in
-                    ShopRowView(shop: shop)
-                        .onTapGesture {
-                            self.selectedShop = shop
-                            self.showModal.toggle()
-                    }
-                    .sheet(isPresented: self.$showModal, onDismiss: {
-                        print("@@@ dismiss modal view !")
-                    }) {
-                        if self.selectedShop != nil {
-                            DetailView(shop: self.selectedShop!)
+            VStack {
+                MapView(userLocation: $viewModel.location, shops: $viewModel.shops)
+                    .frame(height: 300)
+                    .shadow(color: Color.black.opacity(0.4), radius: 4)
+                List {
+                    ForEach(viewModel.shops) { shop in
+                        ShopRowView(shop: shop)
+                            .onTapGesture {
+                                self.selectedShop = shop
+                                self.showModal.toggle()
+                        }
+                        .sheet(isPresented: self.$showModal, onDismiss: {
+                            print("@@@ dismiss modal view !")
+                        }) {
+                            if self.selectedShop != nil {
+                                DetailView(shop: self.selectedShop!)
+                            }
                         }
                     }
                 }
             }
-            .navigationBarTitle(Text("ちかくのお店"))
+            .navigationBarTitle(Text("ちかくのお店"), displayMode: .inline)
             .navigationBarItems(trailing: updateButton)
-//            .onAppear { self.viewModel.fetchHotpepper() }
             .onAppear { self.viewModel.updateLocation() }
         }
     }
