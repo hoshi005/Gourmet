@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		375D7230237E6A4900A41F91 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D722F237E6A4900A41F91 /* Color+Extensions.swift */; };
 		EF1F9E69237D7B3A00D66F38 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F9E68237D7B3A00D66F38 /* MapView.swift */; };
 		EF52962F234F74C9009C9F7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF52962E234F74C9009C9F7A /* Assets.xcassets */; };
 		EF529632234F74C9009C9F7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF529631234F74C9009C9F7A /* Preview Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		375D722F237E6A4900A41F91 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		EF1F9E68237D7B3A00D66F38 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		EF529625234F74C7009C9F7A /* Gourmet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gourmet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF52962E234F74C9009C9F7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				EFEFFACE23541904009EAEA7 /* TagView.swift */,
+				375D722F237E6A4900A41F91 /* Color+Extensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				EF52965623520C5F009C9F7A /* HotpepperFetcher.swift in Sources */,
 				EFEFFACF23541904009EAEA7 /* TagView.swift in Sources */,
 				EF52964E23520AFB009C9F7A /* TopView.swift in Sources */,
+				375D7230237E6A4900A41F91 /* Color+Extensions.swift in Sources */,
 				EF52965023520B16009C9F7A /* TopViewModel.swift in Sources */,
 				EF52964923520ACA009C9F7A /* Response.swift in Sources */,
 				EF1F9E69237D7B3A00D66F38 /* MapView.swift in Sources */,
