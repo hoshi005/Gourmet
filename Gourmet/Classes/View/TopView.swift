@@ -17,6 +17,7 @@ struct TopView: View {
     
     private var updateButton: some View {
         Button(action: {
+            self.selectedShop = nil
             self.viewModel.updateLocation()
         }) {
             Image(systemName: "arrow.counterclockwise")
@@ -27,7 +28,7 @@ struct TopView: View {
     var body: some View {
         NavigationView {
             VStack {
-                MapView(userLocation: $viewModel.location, shops: $viewModel.shops)
+                MapView(userLocation: $viewModel.location, shops: $viewModel.shops, shop: $selectedShop)
                     .frame(height: 300)
                     .shadow(color: Color.black.opacity(0.4), radius: 4)
                 List {
@@ -35,7 +36,7 @@ struct TopView: View {
                         ShopRowView(shop: shop)
                             .onTapGesture {
                                 self.selectedShop = shop
-                                self.showModal.toggle()
+//                                self.showModal.toggle()
                         }
                         .sheet(isPresented: self.$showModal, onDismiss: {
                             print("@@@ dismiss modal view !")
