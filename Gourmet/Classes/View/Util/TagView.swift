@@ -17,12 +17,12 @@ struct TagView: View {
             
             // ジャンル.
             Text(shop.genre.name)
-                .modifier(TagBaseLayout(color: .yellow))
+                .modifier(TagBaseLayout(color: .tag))
             
             // サブジャンル.
             if shop.subGenre != nil {
                 Text(shop.subGenre!.name)
-                    .modifier(TagBaseLayout(color: .yellow))
+                    .modifier(TagBaseLayout(color: .tag))
             }
         }
     }
@@ -33,7 +33,7 @@ struct TagView: View {
 struct TagBaseLayout: ViewModifier {
     
     var color: Color
-    var background: Color = .white
+    var background: Color = .clear
     
     public func body(content: Content) -> some View {
         content

@@ -13,6 +13,7 @@ struct MapView: UIViewRepresentable {
     
     @Binding var userLocation: CLLocation
     @Binding var shops: [Shop]
+    @Binding var shop: Shop?
     
     func makeCoordinator() -> MapView.Coordinator {
         Coordinator(self)
@@ -26,22 +27,28 @@ struct MapView: UIViewRepresentable {
         return mapView
     }
     
-    func updateUIView(_ uiView: MKMapView, context: Context) {
+    func updateUIView(_ mapView: MKMapView, context: Context) {
         print(#function)
         
-        uiView.setRegion(
+        mapView.setRegion(
             MKCoordinateRegion(
                 center: userLocation.coordinate,
                 span: MKCoordinateSpan(
-                    latitudeDelta: 0.05,
-                    longitudeDelta: 0.05
+                    latitudeDelta: 0.03,
+                    longitudeDelta: 0.03
                 )
             ),
             animated: true
         )
         
+        // アノテーションを追加.
         let newAnnotations = shops.map { ShopAnnotation(shop: $0) }
-        uiView.addAnnotations(newAnnotations)
+        mapView.addAnnotations(newAnnotations)
+        
+        // 対象の店を中央に.
+        if let shop = shop {
+            mapView.setCenter(shop.coordinate, animated: true)
+        }
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
@@ -52,6 +59,10 @@ struct MapView: UIViewRepresentable {
         }
         
         func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+            print(#function)
+        }
+        
+        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
             print(#function)
         }
     }
@@ -76,8 +87,9 @@ struct MapView_Previews: PreviewProvider {
     )
 
     @State static var shops = [Shop.dummy]
+    @State static var shop: Shop? = Shop.dummy
 
     static var previews: some View {
-        MapView(userLocation: $location, shops: $shops)
+        MapView(userLocation: $location, shops: $shops, shop: $shop)
     }
 }
