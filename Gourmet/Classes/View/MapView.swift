@@ -41,13 +41,18 @@ struct MapView: UIViewRepresentable {
             animated: true
         )
         
+        // 現在のアノテーションを削除.
+        mapView.removeAnnotations(mapView.annotations)
+        
         // アノテーションを追加.
         let newAnnotations = shops.map { ShopAnnotation(shop: $0) }
         mapView.addAnnotations(newAnnotations)
         
-        // 対象の店を中央に.
+        // 一覧で選択された店舗のアノテーションを選択する.
         if let shop = shop {
-            mapView.setCenter(shop.coordinate, animated: true)
+            if let anno = newAnnotations.first(where: { $0.id == shop.id }) {
+                mapView.selectAnnotation(anno, animated: true)
+            }
         }
     }
     
@@ -64,6 +69,10 @@ struct MapView: UIViewRepresentable {
         
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
             print(#function)
+            // 選択されたアノテーションが中心に来るように移動する.
+            if let coordinate = view.annotation?.coordinate {
+                mapView.setCenter(coordinate, animated: true)
+            }
         }
     }
 }
@@ -80,15 +89,15 @@ final class ShopAnnotation: NSObject, MKAnnotation {
 }
 
 struct MapView_Previews: PreviewProvider {
-
+    
     @State static var location = CLLocation(
         latitude: 35.688382,
         longitude: 139.805927
     )
-
+    
     @State static var shops = [Shop.dummy]
     @State static var shop: Shop? = Shop.dummy
-
+    
     static var previews: some View {
         MapView(userLocation: $location, shops: $shops, shop: $shop)
     }
