@@ -4,6 +4,10 @@
 
 * <https://docs.mapbox.com/help/tutorials/ios-swiftui/>
 
+## 参考になりそう？
+
+* [人気の旅行APIをまとめてみた](https://qiita.com/cnakano/items/cf19cb541b2e952576b5)
+
 ## Hotpepper API
 
 * [API仕様](https://webservice.recruit.co.jp/hotpepper/reference.html)
