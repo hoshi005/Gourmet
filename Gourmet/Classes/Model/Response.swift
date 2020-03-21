@@ -37,27 +37,27 @@ struct Shop: Codable, Identifiable {
     let nameKana: String?
     let address: String
     let stationName: String?
-    let ktaiCoupon: String?
+    let ktaiCoupon: Int
     let largeServiceArea: Area?
     let serviceArea: Area?
     let largeArea: Area?
     let middleArea: Area?
     let smallArea: Area?
-    let lat: String
-    let lng: String
+    let lat: Double
+    let lng: Double
     let genre: Genre
     let subGenre: Genre?
     let budget: Budget?
     let budgetMemo: String?
     let `catch`: String
-    let capacity: String?
+    let capacity: Int
     let access: String
     let mobileAccess: String?
     let urls: Urls
     let photo: Photo
     let open: String?
     let close: String?
-    let partyCapacity: String?
+    let partyCapacity: Int
     let wifi: String?
     let wedding: String?
     let course: String?
@@ -148,10 +148,7 @@ struct Shop: Codable, Identifiable {
     }
     
     var coordinate: CLLocationCoordinate2D {
-        guard
-            let lat = CLLocationDegrees(lat),
-            let lng = CLLocationDegrees(lng) else { fatalError() }
-        return CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        CLLocationCoordinate2D(latitude: lat, longitude: lng)
     }
     
     /// preview用のダミーデータ.
